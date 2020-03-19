@@ -1,11 +1,6 @@
 import pyaudio
 import wave
 import sys
-from speech_recog.py import detectLanguage
-import os
-from google.cloud import translate_v2 as translate
-import speech_recognition as sr
-
 
 class AudioFile:
     chunk = 1024
@@ -34,13 +29,6 @@ class AudioFile:
         self.p.terminate()
 
 # Usage example for pyaudio
-r = sr.Recognizer()
-audio = AudioFile("file.wav")
-# a.play()
-# a.close()
-try:
-    text = r.recognize_google(audio)
-    inputText = "{}".format(text)
-    detectLanguage(inputText)
-except:
-    print("Sorry could not recognize what you said")
+a = AudioFile("file.wav")
+a.play()
+a.close()
