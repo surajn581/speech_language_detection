@@ -5,7 +5,7 @@ import winsound
 import io
 import requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
-
+from audio_player import AudioFile
 
 # addr = 'http://127.0.0.1:5000/get_labels'
 # test_url = addr
@@ -46,10 +46,10 @@ from requests_toolbelt.multipart.encoder import MultipartEncoder
 # print(r.text)
 
 import requests
-filename = 'suits.jpg'
+filename = 'file.wav'
 url = "http://127.0.0.1:5000/audio"
 # winsound.PlaySound(filename, winsound.SND_FILENAME)
-fin = open(filename,encoding="utf-8", errors='replace')
+fin = AudioFile("file.wav")
 print(fin)
 # with io.BufferedReader(fin) as r:
 # 	lines = [str(line,'utf-8') for line in r]

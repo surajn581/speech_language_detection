@@ -4,6 +4,7 @@ import requests
 import json
 import os
 import io
+from audio_player import AudioFile
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -20,9 +21,11 @@ def audio_process():
 			audio = request.files['file']
 			print('audio received')
 			print(audio)
-			with io.BufferedReader(audio) as r:
-				lines = [str(line,'utf-8') for line in r]
-			print(lines)
+			# with io.BufferedReader(audio) as r:
+			# 	lines = [str(line,'utf-8') for line in r]
+			# print(lines)
+			audio.play()
+			audio.close()
 			# audio.save('C:/Users/hp/AnneMe/','this.wav')
 			# # with open("audio_file.wav", "wb") as file:
 			# # 	file.write(audio.frame_data())
